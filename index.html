@@ -112,20 +112,14 @@
             bulletImg = loadImage('Bullet.png');
         }
 
-        function setup() {
-    let canvasWidth = windowWidth * 0.4; // 60% smaller
-    let canvasHeight = windowHeight * 0.4; // 60% smaller
+function setup() {
+    let canvasWidth = windowWidth * 0.7; // 30% smaller
+    let canvasHeight = windowHeight * 0.7; // 30% smaller
     createCanvas(canvasWidth, canvasHeight);
     frameRate(60);
     player = new Player();
     adjustCanvasSize();
 }
-
-function windowResized() {
-    resizeCanvas(windowWidth * 0.4, windowHeight * 0.4); // Resize dynamically
-    adjustCanvasSize();
-}
-
 
 function adjustCanvasSize() {
     let canvasElement = select('canvas');
@@ -135,6 +129,11 @@ function adjustCanvasSize() {
     canvasElement.style('top', '50%'); 
     canvasElement.style('left', '50%'); 
     canvasElement.style('transform', 'translate(-50%, -50%)'); // Center the canvas
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth * 0.4, windowHeight * 0.4); // Resize dynamically
+    adjustCanvasSize();
 }
 
 
